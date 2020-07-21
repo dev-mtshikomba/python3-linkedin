@@ -17,7 +17,7 @@ def quick_api(api_key, secret_key, port=8000):
     and allow the access, after you do that, the method will return with the api
     object.
     """
-    auth = LinkedInAuthentication(api_key, secret_key, 'http://localhost:8000/',
+    auth = LinkedInAuthentication(api_key, secret_key, 'http://localhost:/'+port,
                                   list(PERMISSIONS.enums.values()))
     app = LinkedInApplication(authentication=auth)
     print(auth.authorization_url)
